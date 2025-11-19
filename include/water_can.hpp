@@ -20,7 +20,12 @@
 
 class WaterCan {
 public:
-	WaterCan(std::string tag, float distanceFull, float distanceEmpty, std::string ipAddrPumpSwitch, gpio_num_t triggerPinHcsr04, gpio_num_t echoPinHcsr04);
+	WaterCan(std::string tag,
+	         float distanceFull,
+	         float distanceEmpty,
+	         std::string ipAddrPumpSwitch,
+	         gpio_num_t triggerPinHcsr04,
+	         gpio_num_t echoPinHcsr04);
 	virtual ~WaterCan();
     float Measure();
     bool ControlPumpSwitch(uint16_t toggleAfter);
