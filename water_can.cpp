@@ -60,3 +60,8 @@ bool WaterCan::ControlPumpSwitch(uint16_t toggleAfter) {
           }
           return this->pumpIsOn;
 }
+
+float WaterCan::GetMaxWaterLevel() {
+	return this->maxWaterLevel;
+}
+

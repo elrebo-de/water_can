@@ -28,6 +28,7 @@ public:
 	         gpio_num_t echoPinHcsr04);
 	virtual ~WaterCan();
     float Measure();
+    float GetMaxWaterLevel();
     bool ControlPumpSwitch(uint16_t toggleAfter);
 
 private:	

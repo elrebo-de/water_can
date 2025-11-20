@@ -1,8 +1,9 @@
-version: "1.0.0"
+version: "1.0.1"
 dependencies:
     idf: ">=6.0"
+    elrebo-de/onboard_led: ^1.0.2
     elrebo-de/shelly_plug: ^1.0.0
     elrebo-de/hcsr04_sensor: ^1.0.4
     elrebo-de/water_can:
-      version: "1.0.0"
+      version: "1.0.1"
       override_path: '../../../' # three levels up, pointing to the directory with the component itself
