@@ -8,6 +8,8 @@ The following loop is repeated every second:
 * If the water level rises above the maximum water level of the water can the state is switched to state `pumpIsOn == false`
 * If the water can is in state `pumpIsOn == true` the pump is switched on for 3 seconds.
 
+The water level is visualized with the onboard LED: red: empty, green: full, other colors: inbetween.
+
 ## Hardware
 
 * A shelly plug with an IP address in the connected WLAN  and
