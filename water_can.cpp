@@ -27,6 +27,11 @@ WaterCan::WaterCan(std::string tag,
     this->maxWaterLevel = this->distanceEmpty - this->distanceFull;
 
     this->pumpSwitch = new ShellyPlug(std::string("pumpSwitch"), this->ipAddrPumpSwitch);
+
+    if (this->pumpSwitch->GetLastHttpCode() != HTTP_CODE_OK) {
+        ESP_LOGI(this->tag.c_str(), "No Shelly Plug at IP Addr %s", this->ipAddrPumpSwitch.c_str());
+    }
+
     this->canSensor = new Hcsr04Sensor(std::string("canSensor"),
                                        this->triggerPinHcsr04,
                                        this->echoPinHcsr04,

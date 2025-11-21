@@ -1,4 +1,4 @@
-version: "1.0.1"
+version: "1.0.2"
 license: "Apache 2.0"
 description: "Component to control the refill of a water can for ESP-IDF version 6.0+ using a C++ class"
 url: "https://github.com/elrebo-de/water_can"
@@ -10,5 +10,5 @@ files:
   use_gitignore: "true"
 dependencies:
   idf: "^6.0.0"
-  elrebo-de/shelly_plug: ^1.0.0
+  elrebo-de/shelly_plug: ^1.0.1
   elrebo-de/hcsr04_sensor: ^1.0.4
