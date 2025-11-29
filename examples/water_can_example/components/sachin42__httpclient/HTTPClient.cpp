@@ -4,6 +4,8 @@
 #include <esp_log.h>
 #include <esp_crt_bundle.h>
 
+#include "esp_idf_version.h"
+
 #ifdef LOG_TAG
 #undef LOG_TAG
 #endif
@@ -92,13 +94,16 @@ esp_err_t HTTPClient::_http_event_handler(esp_http_client_event_t *evt)
         log_d("HTTP_EVENT_REDIRECT -> %s", self->_location.c_str());
         break;
 
-    // CO
-    case HTTP_EVENT_ON_HEADERS_COMPLETE:
-        break;
-
-    // CO
-    case HTTP_EVENT_ON_STATUS_CODE:
-        break;
+    // enable IDF version 6.0 events
+    #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(6, 0, 0)
+        // enable functionality present in ESP-IDF v6.0
+        case HTTP_EVENT_ON_HEADERS_COMPLETE:
+            log_d("HTTP_EVENT_ON_HEADERS_COMPLETE");
+            break;
+        case HTTP_EVENT_ON_STATUS_CODE:
+            log_d("HTTP_EVENT_ON_STATUS_CODE");
+            break;
+    #endif
     }
 
     return ESP_OK;
