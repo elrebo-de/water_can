@@ -67,21 +67,22 @@ extern "C" void app_main(void)
 	      #if defined(CONFIG_IDF_TARGET_ESP32C6)
  	          /* ESP32-C6-DevKitM-1 V1.0 */
 		      (gpio_num_t)8,
-		      std::string("LED strip"),
 		      std::string("GRB"),
 		      std::string("RMT"),
 		      LED_MODEL_WS2812,
 	      #elif defined(CONFIG_IDF_TARGET_ESP32C3)
-	          /* Waveshare ESP32-C3-Zero */
-		      (gpio_num_t)10,
-		      std::string("LED strip"),
-		      std::string("RGB"),
-		      std::string("RMT"),
-		      LED_MODEL_WS2812,
+	        /* Waveshare ESP32-C3-Zero
+		    (gpio_num_t) 10,
+		    std::string("RGB"),
+		    std::string("RMT"),
+		    LED_MODEL_WS2812, */
+
+	        /* ESP32-C3 w/ LCD display */
+		    (gpio_num_t) 8,
+            (uint8_t) 0, // activeLevel
 	      #elif defined(CONFIG_IDF_TARGET_ESP32)
 	          /* M5 Atom Lite */
 		      (gpio_num_t)27,
-		      std::string("LED strip"),
 		      std::string("GRB"),
 		      std::string("RMT"),
 		      LED_MODEL_WS2812,
